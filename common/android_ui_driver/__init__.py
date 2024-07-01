@@ -1,5 +1,7 @@
 """
-Copyright (c) 2024 Wing Chen
+MIT License
+
+Copyright (c) 2024 Wing YQ Chen
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -24,8 +26,8 @@ from .AndroidDevice import AndroidDevice
 from .AndroidElement import AndroidElement, ElmWith
 from .AndroidBasePage import AndroidBasePage
 
-__author__ = "Wing Chen"
+__author__ = "Wing YQ Chen"
 
 __version__ = "1.0"
 
-__contact__ = "13059381952@163.com"
+__contact__ = "810028565@qq.com"
