@@ -1,8 +1,8 @@
+from .android_element import *
+from typing import Optional, Union
 import uiautomator2
 import adbutils
 import logging
-from typing import Optional, Union
-import android_element
 
 
 class AndroidDevice(uiautomator2.Device):
@@ -46,4 +46,4 @@ class AndroidDevice(uiautomator2.Device):
         return None
 
     def __call__(self, business_describe: str = None, **kwargs) -> 'AndroidElement':
-        return android_element.AndroidElement(self, uiautomator2.Selector(**kwargs), self.loger, business_describe)
+        return AndroidElement(self, uiautomator2.Selector(**kwargs), self.loger, business_describe)

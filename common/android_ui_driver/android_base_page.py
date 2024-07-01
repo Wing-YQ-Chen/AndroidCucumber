@@ -1,9 +1,10 @@
+from .android_device import *
 import time
-import android_device
+
 
 class AndroidBasePage(object):
 
-    def __init__(self, android: 'android_device.AndroidDevice'):
+    def __init__(self, android: 'AndroidDevice'):
         self.android = android
         self.loger = android.loger
 

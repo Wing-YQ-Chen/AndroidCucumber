@@ -1,7 +1,9 @@
+from .android_device import *
+from uiautomator2.exceptions import UiObjectNotFoundError
 import uiautomator2
 import logging
-from uiautomator2.exceptions import UiObjectNotFoundError
-import android_device
+
+
 
 
 class ElmWith(object):
@@ -35,7 +37,7 @@ class ElmWith(object):
 
 class AndroidElement(uiautomator2.UiObject):
 
-    def __init__(self, session: android_device.AndroidDevice, selector: uiautomator2.Selector, loger: logging.Logger,
+    def __init__(self, session: 'AndroidDevice', selector: uiautomator2.Selector, loger: logging.Logger,
                  business_describe: str = None):
         super().__init__(session, selector)
         self._loger = loger
