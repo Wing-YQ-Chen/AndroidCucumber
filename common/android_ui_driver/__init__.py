@@ -1,6 +1,6 @@
-from .android_device import AndroidDevice
-from .android_element import AndroidElement, ElmWith
-from .android_base_page import AndroidBasePage
+from .AndroidDevice import AndroidDevice
+from .AndroidElement import AndroidElement, ElmWith
+from .AndroidBasePage import AndroidBasePage
 
 __author__ = "Wing Chen"
 

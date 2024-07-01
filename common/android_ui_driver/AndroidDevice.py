@@ -1,4 +1,4 @@
-from .android_element import *
+from .AndroidElement import *
 from typing import Optional, Union
 import uiautomator2
 import adbutils

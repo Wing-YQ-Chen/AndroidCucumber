@@ -1,4 +1,4 @@
-from .android_device import *
+from .AndroidDevice import *
 import time
 
 

@@ -1,9 +1,7 @@
-from .android_device import *
+from .AndroidDevice import *
 from uiautomator2.exceptions import UiObjectNotFoundError
 import uiautomator2
 import logging
-
-
 
 
 class ElmWith(object):
