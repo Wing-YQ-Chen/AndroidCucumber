@@ -1,9 +1,13 @@
-import logging
+import time
 from .AndroidDevice import AndroidDevice
 
 
 class AndroidBasePage(object):
 
-    def __init__(self, android: AndroidDevice, loger: logging.Logger = logging.getLogger()):
+    def __init__(self, android: AndroidDevice):
         self.android = android
-        self._loger = loger
+        self.loger = android.loger
+
+    def sleep(self, s):
+        self.loger.info(f'🌙 Sleeping {s}s')
+        time.sleep(s)

@@ -1,6 +1,6 @@
 import time
 from behave import *
-from android_ui_driver import AndroidDriver, ElmWith
+from common.android_ui_driver import AndroidDevice, ElmWith
 from behave.__main__ import main as behave_main
 
 product = {ElmWith.className: 'android.view.ViewGroup',
@@ -14,7 +14,7 @@ allow_lunch_app_btn = {ElmWith.business_describe: '允许启动淘宝',
 
 @given('user is on the home page of SAK app')
 def lunch_app(context):
-    context.ad = AndroidDriver('ba151d69')
+    context.ad = AndroidDevice('ba151d69')
     context.ad.app_stop('com.taobao.taobao')
     context.ad.app_start(package_name='com.One.WoodenLetter', wait=True, stop=True)
     time.sleep(1)
