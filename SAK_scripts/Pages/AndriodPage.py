@@ -1,6 +1,10 @@
 from common.android_ui_driver import *
 from common.log import setup_logging
 
+"""
+CategoriesPage 类继承自 AndroidBasePage，用于处理特定的分类页面操作
+"""
+
 
 class CategoriesPage(AndroidBasePage):
     product = {ElmWith.className: 'android.view.ViewGroup',
@@ -11,11 +15,16 @@ class CategoriesPage(AndroidBasePage):
                            ElmWith.className: 'android.widget.Button',
                            ElmWith.resourceId: 'android:id/button1'}
 
+    """
+    访问一个标签的方法
+    """
+
     def access_a_tab(self):
         self.loger.info('access_a_tab')
         e = self.android(**self.lunched_elm)
         e.click()
-        # self.android(**self.a_button_elm)
+        for e in self.android(**self.lunched_elm).gets():
+            e.click()
 
 
 if __name__ == '__main__':

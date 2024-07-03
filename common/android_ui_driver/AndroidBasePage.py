@@ -1,27 +1,30 @@
 import time
 from .AndroidDevice import AndroidDevice
 
+"""
+AndroidBasePage 类，作为 Android 相关页面的基类
+"""
+
 
 class AndroidBasePage(object):
     """
-    AndroidBasePage 是所有 Android 页面类的基类。
+    初始化方法
+
+    参数：
+    android (AndroidDevice)：Android 设备对象
     """
 
     def __init__(self, android: 'AndroidDevice'):
-        """
-        初始化 AndroidBasePage 类。
-
-        :param android: AndroidDevice 实例
-        """
         self.android = android
         self.loger = android.loger
 
-    def sleep(self, s):
-        """
-        使设备等待指定的秒数。
+    """
+    睡眠方法，用于暂停指定的秒数，并记录日志
 
-        :param s: 等待的秒数
-        """
+    参数：
+    s (float)：要暂停的秒数
+    """
+
+    def sleep(self, s):
         self.loger.info(f'🌙 Sleeping {s}s')
         time.sleep(s)
-
