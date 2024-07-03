@@ -98,12 +98,15 @@ class AndroidDevice(uiautomator2.Device):
     AndroidElement 或 None：找到的元素或 None
     """
 
-    def swipe_down_to_find(self, times: int = 10, business_describe: str = None, **kwargs) -> 'AndroidElement' or None:
+    def swipe_down_to_find(self, times: int = 10, business_describe: str = None, raise_err_not_found=True, **kwargs) -> 'AndroidElement':
+        elm = self(business_describe, **kwargs)
         for i in range(times):
-            elm = self.__call__(business_describe, **kwargs)
-            if elm.waiting(timeout=1):
+            if elm.waiting(timeout=1, raise_err_not_found=False):
                 return elm
             self.swipe_down()
+        else:
+            if elm.waiting(timeout=1, raise_err_not_found=raise_err_not_found):
+                return elm
         return None
 
     """

@@ -105,12 +105,15 @@ class AndroidElement(uiautomator2.UiObject):
     bool：元素是否存在
     """
 
-    def waiting(self, exists=True, timeout=None) -> bool:
+    def waiting(self, exists=True, timeout=None, raise_err_not_found=True) -> bool:
         self._loger.info(f'⏳ Waiting {timeout if timeout else self.wait_timeout}s for {self.elm_describe}')
         elm_exist = super().wait(exists, timeout)
         if elm_exist != exists:
-            self._loger.info('❌ Element is {} for {}'.format(
-                'not existing' if exists else 'existing', self.elm_describe))
+            msg = '❌ Element is {} for {}'.format(
+                'not existing' if exists else 'existing', self.elm_describe)
+            self._loger.info(msg)
+            if raise_err_not_found:
+                raise UiObjectNotFoundError(msg)
         return elm_exist
 
     """
@@ -121,9 +124,13 @@ class AndroidElement(uiautomator2.UiObject):
     timeout (Optional[float])：超时时间，可选
     """
 
-    def set_text(self, text, timeout=None):
+    def set_text(self, text, timeout=None, clear_before_set=True):
         self._loger.info(f'🎹 Input {text} to {self.elm_describe}')
+        if clear_before_set:
+            super().set_text(None)
+            pass
         super().set_text(text, timeout)
+
 
     """
     获取多个元素, 注意这个搜索是没有任何隐式等待的
