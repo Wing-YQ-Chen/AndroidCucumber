@@ -1,6 +1,8 @@
 import uiautomator2
 import adbutils
 import logging
+import os
+import time
 from .AndroidElement import AndroidElement
 from typing import Optional, Union
 
@@ -108,6 +110,20 @@ class AndroidDevice(uiautomator2.Device):
             if elm.waiting(timeout=1, raise_err_not_found=raise_err_not_found):
                 return elm
         return None
+
+    """
+    截图方法
+    """
+
+    def screenshot(self, filename: Optional[str] = None, format="pillow", display_id: Optional[int] = None):
+        if not filename:
+            save_dir_path = os.path.abspath('./Android_Screenshots')
+            if not os.path.exists(save_dir_path):
+                os.makedirs(save_dir_path)
+            filename = '{} Android.png'.format(time.strftime('%Y%m%d%H%M%S', time.localtime()).__str__())
+            filename = os.path.join(save_dir_path, filename)
+        self.loger.info(f'📸 Screenshot to {filename}')
+        super().screenshot(filename, format, display_id)
 
     """
     创建 AndroidElement 对象的方法
