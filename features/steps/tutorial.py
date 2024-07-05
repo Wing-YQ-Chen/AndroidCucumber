@@ -19,15 +19,6 @@ def lunch_app(context):
     context.ad.app_start(package_name='com.One.WoodenLetter', wait=True, stop=True)
     time.sleep(1)
 
-    # ad(text='Tb Coupon Query').click()
-    # assert ad(text='精选优品').waiting()
-    # ad(**product).click()
-    # ad(**allow_lunch_app_btn).try_click(5)
-    # assert ad(text='粉丝福利购').waiting()
-    # ad(text='立即领券').click()
-    # assert ad(text='领券购买').waiting()
-    # ad.screenshot('test.png')
-
 
 @when('user click the button of "{button_text}"')
 def click_btn_by_text(context, button_text):
