@@ -1,6 +1,6 @@
 #noinspection CucumberUndefinedStep
 Feature: Added a new function of "Tb Coupon Query"
-  Background: Device installed latest SAK app
+  Background: user is installed the latest SAK app
 
   Scenario: user to get the Tb Coupon successfully
     Given user is on the home page of SAK app

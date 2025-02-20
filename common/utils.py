@@ -18,51 +18,6 @@ orange_fill = PatternFill("solid", fgColor="E87722")
 yellow_fill = PatternFill("solid", fgColor="FFFF00")
 
 
-# def setup_driver():
-#     driver_path = ''
-#     try:
-#         logger.info("Downloading driver for Chrome")
-#         driver_path = ChromeDriverManager(path=r"../Driver").install()
-#         # driver_path = ChromeDriverManager().install()
-#     except BaseException:
-#         logger.info("Failed download driver and start to get it from config path")
-#         driver_path = "../Driver/chromedriver.exe"
-#         # driver_path = ""
-#     driver_path = os.path.abspath(driver_path)
-#     if os.path.exists(driver_path):
-#         logger.info(f"Got it from {driver_path}")
-#     else:
-#         logger.warning(f"Cannot found chromedriver.exe from path\n{driver_path}")
-#
-#     options = ChromeOptions()
-#     # 忽略提醒，自动化提醒和无用日志
-#     options.add_experimental_option("excludeSwitches", ["enable-automation", "enable-logging"])
-#     # 忽略提醒，证书错误
-#     options.add_argument('--headless')
-#     options.add_argument("--ignore-certificate-errors")
-#     options.add_argument("--ignore-ssl-errors")
-#     options.add_argument("–disable-notifications")
-#     options.add_argument("lang=en_US")
-#     return driver_path, options
-#     try:
-#         logger.info("Testing lunch the browser")
-#         # driver = webdriver.Remote(command_executor='http://10.22.88.11:4444', desired_capabilities={"browserName": "chrome"})
-#         driver = Chrome(service=Service(driver_path), options=options)
-#         driver.quit()
-#         logger.info("Lunched successfully")
-#     except BaseException:
-#         logger.error(f'{traceback.format_exc()}\nPlease check the webDriver as it failed in lunch browser!')
-#         input("THE END")
-#         sys.exit()
-#     finally:
-#         return driver_path, options
-#
-#
-# @func_set_timeout(60)
-# def quit_browser(driver):
-#     driver.quit()
-
-
 def get_timestamp_str(time_format: str = r'%Y%m%d%H%M%S'):
     # r'%Y/%m/%d %H:%M:%S'
     import time
@@ -355,15 +310,3 @@ def delete_proxy(path):
     logger.info(f"Deleting Proxy")
     os.system(f'"{path}"')
 
-
-if __name__ == '__main__':
-    # from loguru import logger
-    # import loguru
-    #
-    # username = os.getlogin()
-    # # log_path = os.path.join(log_dir_path, username + " {time}.log")
-    # logger.add('.', format=r'{time:YYYY-MM-DD HH:mm:ss} | {file}-{line} | {level} | {message}', level=level, encoding="utf-8")
-    a = "123456789987654313221321321321321"
-    a = a[0:33]
-    print(a)
-    pass
