@@ -1,2 +1,2 @@
-cd venv311\Scripts
+call venv/Scripts/activate
 python -m uiautodev
