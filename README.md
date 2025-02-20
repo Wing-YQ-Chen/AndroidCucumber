@@ -1,6 +1,6 @@
 This is a Python project of code displaying only for the upcoming interviews.
 
-Only a simple BDD example here which is an Android app testing framework base on the Behave and UiAutomator2
+Only a simple BDD example here which is a Web testing framework base on the Selenium.
 
 And I am still preparing the Selenium codes of testing for websites
 
