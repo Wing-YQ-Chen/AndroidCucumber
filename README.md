@@ -10,6 +10,6 @@ Sorry, I don't have enough time to prepare so well.
 
 contact me below:
 
-email: 13059381952@163.com
+email: wing13059381952@gmail.com
 
 wechat: 13059381952
