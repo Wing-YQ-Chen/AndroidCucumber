@@ -1,5 +1,3 @@
-# Automation testing scripts Demo of Wing Chen
-
 This is a Python project of code displaying only for the upcoming interviews.
 
 Only a simple BDD example here which is an Android app testing framework base on the Behave and UiAutomator2
