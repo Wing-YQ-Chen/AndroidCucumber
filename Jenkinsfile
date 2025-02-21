@@ -29,7 +29,7 @@ pipeline {
 			steps {
 				bat """
 				echo "Run Testing"
-				python features\\steps\\tutorial.py
+				python features\\steps\\Tb_Coupon_Query.py
 				"""
 			}
 			post {
