@@ -11,7 +11,6 @@ allow_lunch_app_btn = {ElmWith.business_describe: '允许启动淘宝',
                        ElmWith.className: 'android.widget.Button',
                        ElmWith.resourceId: 'android:id/button1'}
 
-
 @given('user is on the home page of SAK app')
 def lunch_app(context):
     context.ad = AndroidDevice()
